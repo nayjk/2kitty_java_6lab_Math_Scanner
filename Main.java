@@ -2,17 +2,6 @@ package com.metanit;
 
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Введите x");
-        int x = in.nextInt();
-        System.out.println("Введите Y");
-        int y = in.nextInt();
-        number v = new number(x, y);
-        v.cat();
-    }
-}
 class number{
     public int x;
     public int y;
@@ -21,15 +10,26 @@ class number{
         this.y = y;
     }
     public void cat(){
-        if (x == 0){
-            System.out.println("Переменная равна нулю, на ноль делить нельзя");
-            if (y == 0){
-                System.out.println("Переменная равна нулю, на ноль делить нельзя");
-            }
+        int a = x + y;
+        if (a == 0){
+            System.out.println("Числитель равен нулю, на ноль делить нельзя");
         }
-        double a = x + y; //знаменат
-        double b = 1 + y; //числит
-        double z = a/b;
-        System.out.println("Получилось " + z );
+        int b = 1 + y;
+        if (b == 0){
+            System.out.println("Знаменатель равен нулю, на ноль делить нельзя");
+        }
+        int z = a/b;
+        System.out.println("Получилось" + z);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner cat = new Scanner(System.in);
+        System.out.println("Введите x");
+        int x = cat.nextInt();
+        System.out.println("Введите Y");
+        int y = cat.nextInt();
+        number v = new number(x, y);
+        v.cat();
     }
 }
